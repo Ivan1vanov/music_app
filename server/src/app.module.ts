@@ -10,7 +10,7 @@ import * as path from 'path'
 @Module({
     imports: [
         ServeStaticModule.forRoot({rootPath: path.resolve(__dirname, 'static')}),
-        MongooseModule.forRoot('mongodb+srv://music:music@cluster0.0pgtv.mongodb.net/spotify_clone?retryWrites=true&w=majority'),
+        MongooseModule.forRoot(proces.env.CONNECT_URL),
         TrackModule,
         FileModule
     ]
